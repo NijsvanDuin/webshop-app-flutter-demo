@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:nijs_webshop/pages/product_detail_page.dart';
 
 class ProductItem extends StatelessWidget {
   final String id;
@@ -33,8 +34,24 @@ class ProductItem extends StatelessWidget {
           icon: const Icon(Icons.shopping_cart),
         ),
       ),
-      child: Tooltip(
-        message: description,
+      // child: Tooltip(
+      //   message: description,
+      //   child: Image.network(
+      //     imageUrl,
+      //     fit: BoxFit.cover,
+      //   ),
+      // ),
+      child: GestureDetector(
+        onTap: () {
+          Navigator.of(context).push(
+            MaterialPageRoute(
+              builder: (context) => ProductDetailPage(
+                title: title,
+                description: description,
+              ),
+            ),
+          );
+        },
         child: Image.network(
           imageUrl,
           fit: BoxFit.cover,
