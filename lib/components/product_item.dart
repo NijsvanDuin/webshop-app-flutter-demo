@@ -34,28 +34,32 @@ class ProductItem extends StatelessWidget {
           icon: const Icon(Icons.shopping_cart),
         ),
       ),
-      // child: Tooltip(
-      //   message: description,
-      //   child: Image.network(
-      //     imageUrl,
-      //     fit: BoxFit.cover,
-      //   ),
-      // ),
-      child: GestureDetector(
-        onTap: () {
-          Navigator.of(context).push(
-            MaterialPageRoute(
-              builder: (context) => ProductDetailPage(
-                title: title,
-                description: description,
-              ),
+      child: Column(
+        children: [
+          Tooltip(
+            message: description,
+            child: Image.network(
+              imageUrl,
+              fit: BoxFit.cover,
             ),
-          );
-        },
-        child: Image.network(
-          imageUrl,
-          fit: BoxFit.cover,
-        ),
+          ),
+          GestureDetector(
+            onTap: () {
+              Navigator.of(context).push(
+                MaterialPageRoute(
+                  builder: (context) => ProductDetailPage(
+                    title: title,
+                    description: description,
+                  ),
+                ),
+              );
+            },
+            child: Image.network(
+              imageUrl,
+              fit: BoxFit.cover,
+            ),
+          ),
+        ],
       ),
     );
   }
