@@ -1,0 +1,40 @@
+@startuml
+class StatelessWidget{
+    +build(context: BuildContext): Widget
+}
+class StatefulWidget{
+    +createState(): State
+}
+class state{}
+class product {
+    -id: int
+    -title: String
+    -description: String
+    -price: double
+    -imageUrl: String
+    -isFavorite: bool
+    +product(id: int, title: string, description: String,
+    price: double, imageUrl: String, isFavorite: bool ): void
+}
+class product_Item extends StatelessWidget {
+    -id: int
+    -title: String
+    -imageUrl: String
+    -description: String
+    +product_Item(id: int, title: string, description: String,
+    imageUrl: String): void
+    +build(context: BuildContext): GridTile
+}
+class product_overview extends StatefulWidget{
+    +loadedProducts: List<product>
+
+    +product_overview(loadedProducts:: List<product>): void
+}
+class product_detail extends StatelessWidget{
+    -title : String
+    -description: String
+
+    +product_detail(id: int, title: string, description: String,)
+    +build(context: BuildContext): Scaffold
+}
+@enduml

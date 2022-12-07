@@ -1,0 +1,35 @@
+@startuml
+class product {
+    -id: int
+    -title: String
+    -description: String
+    -price: double
+    -imageUrl: String
+    -isFavorite: bool
+}
+class StatelessWidget{}
+class StatefulWidget{}
+class State{}
+
+class nijs_Webshop extends StatelessWidget{
+    +Widget build();
+}
+class product_item extends StatelessWidget{
+    -id: String
+    -title: String
+    -imageUrl: String
+    +Widget build();
+}
+class product_detail extends StatelessWidget{
+    -title: String
+    -description: String
+    +Widget build();
+}
+class product_overview_page extends StatefulWidget{
+    + State<product_overview_page> createState();
+}
+class _product_overview_page extends State{
+    -loadedProducts: List<Product>
+    +Widget build();
+}
+@enduml
