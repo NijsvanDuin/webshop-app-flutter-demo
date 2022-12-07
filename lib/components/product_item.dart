@@ -36,27 +36,26 @@ class ProductItem extends StatelessWidget {
       ),
       child: Column(
         children: [
-          Tooltip(
-            message: description,
-            child: Image.network(
-              imageUrl,
-              fit: BoxFit.cover,
-            ),
-          ),
-          GestureDetector(
-            onTap: () {
-              Navigator.of(context).push(
-                MaterialPageRoute(
-                  builder: (context) => ProductDetailPage(
-                    title: title,
-                    description: description,
+          Flexible(
+            flex: 2,
+            child: GestureDetector(
+              onTap: () {
+                Navigator.of(context).push(
+                  MaterialPageRoute(
+                    builder: (context) => ProductDetailPage(
+                      title: title,
+                      description: description,
+                    ),
                   ),
+                );
+              },
+              child: Tooltip(
+                message: description,
+                child: Image.network(
+                  imageUrl,
+                  fit: BoxFit.cover,
                 ),
-              );
-            },
-            child: Image.network(
-              imageUrl,
-              fit: BoxFit.cover,
+              ),
             ),
           ),
         ],

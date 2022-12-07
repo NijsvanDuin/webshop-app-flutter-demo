@@ -7,28 +7,25 @@ class product {
     -imageUrl: String
     -isFavorite: bool
 }
-class StatelessWidget{}
-class StatefulWidget{}
-class State{}
 
-class nijs_Webshop extends StatelessWidget{
+class nijs_Webshop{
     +Widget build();
 }
-class product_item extends StatelessWidget{
+class product_item{
     -id: String
     -title: String
     -imageUrl: String
     +Widget build();
 }
-class product_detail extends StatelessWidget{
+class product_detail{
     -title: String
     -description: String
     +Widget build();
 }
-class product_overview_page extends StatefulWidget{
+class product_overview_page extends product_item{
     + State<product_overview_page> createState();
 }
-class _product_overview_page extends State{
+class _product_overview_page extends product_overview_page{
     -loadedProducts: List<Product>
     +Widget build();
 }
